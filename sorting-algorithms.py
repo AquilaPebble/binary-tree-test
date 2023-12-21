@@ -1,3 +1,8 @@
+from random import randint
+import threading
+import time
+def generateList(length:int,minMaxElementSize:tuple) -> list:
+    return [randint(minMaxElementSize[0],minMaxElementSize[1]) for i in range(length)]
 def selectionSort(data:list) -> list:
     for i in range(0,len(data)):
         minIndex = i
@@ -16,3 +21,4 @@ def insertionSort(data:list) -> list:
             minIndex -= 1
         data[minIndex] = currentElement
     return data
+testerList = generateList(30,(0,100))
